@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="See how NyxWatch responds when someone uses your laptop while you are away, and follow the step-by-step installation guide." />
+  <title>NyxWatch — Walk away. Stay protected.</title>
+  <link rel="icon" type="image/svg+xml" href="assets/nyxwatch-icon.svg" />
+  <meta name="theme-color" content="#0b0b0c" />
+  <link rel="preload" href="assets/obsidian.webp" as="image" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="#overview" class="navbar__brand" aria-label="NyxWatch Home">
+        <img class="brand-mark" src="assets/nyxwatch-mark.svg" width="28" height="28" alt="" />
+        <span class="brand-name">NyxWatch</span>
+      </a>
+
+      <nav class="navbar__links" aria-label="Primary Navigation">
+        <a href="#overview" class="nav-link" data-i18n="nav.overview">Overview</a>
+        <a href="#sequence" class="nav-link" data-i18n="nav.sequence">Sequence</a>
+        <a href="#modes" class="nav-link" data-i18n="nav.modes">Modes</a>
+        <a href="#bento" class="nav-link" data-i18n="nav.bento">Features</a>
+        <a href="#platforms" class="nav-link" data-i18n="nav.platforms">Platforms</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <button type="button" id="lang-toggle" class="lang-toggle" aria-label="Switch language between French and English">
+          <span class="lang-toggle__option" data-lang="fr">FR</span>
+          <span class="lang-toggle__sep">/</span>
+          <span class="lang-toggle__option is-active" data-lang="en">EN</span>
+        </button>
+        <a href="#platforms" class="btn btn--primary btn--sm" data-i18n="nav.install">Install</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="overview" class="hero scroll-sequence" aria-labelledby="hero-title">
+      <div id="sequence" class="sequence-anchor" tabindex="-1"></div>
+      <div class="sequence-sticky">
+        <div class="container hero__layout">
+          <div class="hero__header">
+
+            <h1 class="hero__title" id="hero-title" data-i18n="hero.title">
+              Walk away.<br /><span>Stay protected.</span>
+            </h1>
+
+            <p class="hero__subtitle" data-i18n="hero.subtitle">NyxWatch for macOS detects physical activity, sends a text alert and locks your Mac. No recording.</p>
+
+            <div class="hero__ctas">
+              <a href="https://github.com/qyber-llc/nyxwatch/releases/download/v1.0.2/NyxWatch.dmg" class="btn btn--primary" data-i18n="nav.cta">Download for Mac</a>
+              <a href="#sequence" class="btn btn--ghost"><span data-i18n="hero.ctaSecondary">See how it works</span><span class="btn__arrow" aria-hidden="true">↓</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="sequence-visual" aria-hidden="true">
+          <div class="sequence-camera">
+            <div class="sequence-device">
+              <div class="sequence-deck">
+                <div class="sequence-keyboard"></div>
+                <div class="sequence-trackpad"></div>
+              </div>
+              <div class="sequence-lid">
+                <div class="sequence-lid-back">
+                  <img class="sequence-emblem" src="assets/nyxwatch-mark.svg" alt="" />
+                </div>
+                <div class="sequence-display">
+                  <div class="sequence-screen">
+                    <div class="sequence-screen-brand">NyxWatch</div>
+                    <div class="sequence-screen-status sequence-screen-status--armed">
+                      <div class="sequence-check">
+                        <svg viewBox="0 0 24 24" fill="none">
+                          <path d="m4.5 12 5 5L19.5 7" pathLength="1" />
+                        </svg>
+                      </div>
+                      <p data-i18n="seq.armed">Protection active</p>
+                      <span data-i18n="seq.monitoring">Activity, USB, lid and power monitored</span>
+                    </div>
+                    <div class="sequence-screen-status sequence-screen-status--locked">
+                      <div class="sequence-lock"><span></span></div>
+                      <p data-i18n="seq.locked">Device locked</p>
+                      <span data-i18n="seq.detected">Intrusion detected</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sequence-channels">
+            <span>WhatsApp</span><span>Telegram</span><span>iMessage</span><span>Mac Studio</span>
+          </div>
+        </div>
+
+        <!-- Floating Chapter Captions -->
+        <div class="sequence-captions">
+          <article class="sequence-caption" data-chapter="0">
+            <span class="sequence-caption__eyebrow" data-i18n="seq.c1Eyebrow">01 · ARMING</span>
+            <h2 class="sequence-caption__title" data-i18n="seq.c1Title">Armed in a keystroke.</h2>
+            <p class="sequence-caption__desc" data-i18n="seq.c1Desc">
+              Press Cmd + Esc or simply walk away. Optional Bluetooth RSSI proximity arms the sentinel automatically.
+            </p>
+          </article>
+
+          <article class="sequence-caption" data-chapter="1">
+            <span class="sequence-caption__eyebrow" data-i18n="seq.c2Eyebrow">02 · MONITORING</span>
+            <h2 class="sequence-caption__title" data-i18n="seq.c2Title">Protection active.</h2>
+            <p class="sequence-caption__desc" data-i18n="seq.c2Desc">Detects activity, USB connections, lid closure and power changes without reading typed keys or recording your screen.</p>
+          </article>
+
+          <article class="sequence-caption" data-chapter="2">
+            <span class="sequence-caption__eyebrow" data-i18n="seq.c3Eyebrow">03 · ALERT &amp; LOCK</span>
+            <h2 class="sequence-caption__title" data-i18n="seq.c3Title">Activity detected. Mac locked.</h2>
+            <p class="sequence-caption__desc" data-i18n="seq.c3Desc">Both response modes lock macOS immediately. Flag adds a visible flash and a spoken warning.</p>
+          </article>
+
+          <article class="sequence-caption" data-chapter="3">
+            <span class="sequence-caption__eyebrow" data-i18n="seq.c4Eyebrow">04 · TEXT ALERTS</span>
+            <h2 class="sequence-caption__title" data-i18n="seq.c4Title">Direct to your devices.</h2>
+            <p class="sequence-caption__desc" data-i18n="seq.c4Desc">A timestamp and the event type go to the notification channels you configure. No photos, video, audio or screen contents.</p>
+          </article>
+        </div>
+
+        <!-- Apple-style Side Progress Rail -->
+        <nav class="sequence-rail" aria-label="Sequence Chapters">
+          <div class="sequence-rail__track" aria-hidden="true">
+            <div class="sequence-rail__fill"></div>
+          </div>
+          <button type="button" class="sequence-rail__btn is-active" data-chapter-target="0" aria-label="Chapter 01: Arming">
+            <span class="rail-num">01</span>
+            <span class="rail-dot"></span>
+          </button>
+          <button type="button" class="sequence-rail__btn" data-chapter-target="1" aria-label="Chapter 02: Monitoring">
+            <span class="rail-num">02</span>
+            <span class="rail-dot"></span>
+          </button>
+          <button type="button" class="sequence-rail__btn" data-chapter-target="2" aria-label="Chapter 03: Busted and Lock">
+            <span class="rail-num">03</span>
+            <span class="rail-dot"></span>
+          </button>
+          <button type="button" class="sequence-rail__btn" data-chapter-target="3" aria-label="Chapter 04: Zero-Cloud Exfil">
+            <span class="rail-num">04</span>
+            <span class="rail-dot"></span>
+          </button>
+        </nav>
+
+      </div>
+    </section>
+
+    <!-- 2. INTERACTIVE MODE SWITCHER -->
+    <section id="modes" class="modes section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow" data-i18n="modes.eyebrow">Response modes</span>
+          <h2 class="section-title" data-i18n="modes.title">Two modes. Total control.</h2>
+          <p class="section-subtitle" data-i18n="modes.subtitle">Choose a quiet lock or add an audible warning. Both modes protect your session without recording.</p>
+        </div>
+
+        <div class="mode-switcher reveal" role="tablist" aria-label="NyxWatch Protection Modes">
+          <button type="button" class="mode-tab is-active" role="tab" id="mode-stealth" aria-controls="mode-stage" aria-selected="true" data-mode="stealth">
+            <span class="mode-tab__dot mode-tab__dot--stealth"></span>
+            <span data-i18n="modes.stealthBtn">Alert + Lock</span>
+          </button>
+          <button type="button" class="mode-tab" role="tab" id="mode-flag" aria-controls="mode-stage" aria-selected="false" tabindex="-1" data-mode="flag">
+            <span class="mode-tab__dot mode-tab__dot--flag"></span>
+            <span data-i18n="modes.flagBtn">Flag Mode</span>
+          </button>
+        </div>
+
+        <div class="mode-stage reveal" id="mode-stage" role="tabpanel" aria-labelledby="mode-stealth" tabindex="0" data-active-mode="stealth">
+          <!-- Left: Live Interactive Preview -->
+          <div class="mode-preview">
+            <div class="mode-preview__header">
+              <span class="mode-preview__tag" id="mode-preview-tag" data-i18n="modes.stealthTag">ALERT + LOCK</span>
+            </div>
+
+            <div class="mode-preview__visual" id="mode-visual">
+              <div class="sequence-lock" aria-hidden="true"><span></span></div>
+              <div class="mode-preview__overlay">
+                <div class="mini-busted" id="mini-busted" hidden>LOCKED</div>
+                <p class="mode-preview__status" id="mode-preview-status" data-i18n="modes.stealthPreviewStatus">Activity detected. Session locked. Text alert sent to your configured channels.</p>
+              </div>
+            </div>
+
+            <div class="mode-preview__pills" id="mode-preview-pills">
+              <span class="feature-pill" data-i18n="modes.pillAV">No recording</span>
+              <span class="feature-pill" id="mode-pill-2" data-i18n="modes.stealthPill2">Immediate Lock</span>
+              <span class="feature-pill" id="mode-pill-3" data-i18n="modes.stealthPill3">Text Alerts</span>
+            </div>
+          </div>
+
+          <!-- Right: Mode Details -->
+          <div class="mode-details">
+            <h3 class="mode-details__title" id="mode-details-title" data-i18n="modes.stealthTitle">Protect your session. Respect privacy.</h3>
+            <p class="mode-details__desc" id="mode-details-desc" data-i18n="modes.stealthDesc">NyxWatch detects physical activity, locks macOS immediately and sends an event notification. It never reads typed keys, captures the screen or records the camera or microphone.</p>
+
+            <ul class="mode-checklist" id="mode-checklist">
+              <li>
+                <span class="check-icon" aria-hidden="true"></span>
+                <span id="mode-item-1" data-i18n="modes.stealthItem1">Activity detection from the system idle timer; no typed content</span>
+              </li>
+              <li>
+                <span class="check-icon" aria-hidden="true"></span>
+                <span id="mode-item-2" data-i18n="modes.stealthItem2">Immediate macOS lock without waiting for network delivery</span>
+              </li>
+              <li>
+                <span class="check-icon" aria-hidden="true"></span>
+                <span id="mode-item-3" data-i18n="modes.stealthItem3">Text alerts via your configured WhatsApp, Telegram, iMessage or LAN receiver</span>
+              </li>
+              <li>
+                <span class="check-icon" aria-hidden="true"></span>
+                <span id="mode-item-4" data-i18n="modes.stealthItem4">Text-only retry queue for the optional local WhatsApp bridge</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. APPLE-STYLE BENTO GRID -->
+    <section id="bento" class="bento section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow" data-i18n="bento.eyebrow">Features</span>
+          <h2 class="section-title" data-i18n="bento.title">Protection, built in.</h2>
+          <p class="section-subtitle" data-i18n="bento.subtitle">Detection runs on your Mac. Delivery uses the notification services you configure.</p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Privacy (macOS release) -->
+          <article class="bento-card bento-card--wide reveal">
+            <div class="bento-card__icon">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <path d="M4 9V6.5C4 5.12 5.12 4 6.5 4H9M19 4H21.5C22.88 4 24 5.12 24 6.5V9M24 19V21.5C24 22.88 22.88 24 21.5 24H19M9 24H6.5C5.12 24 4 22.88 4 21.5V19" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/>
+                <circle cx="14" cy="12.5" r="3.2" stroke="#DC1D2E" stroke-width="1.6"/>
+                <path d="M9.2 19.5C10.2 17.5 11.9 16.5 14 16.5C16.1 16.5 17.8 17.5 18.8 19.5" stroke="#DC1D2E" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="bento-card__content">
+              <span class="bento-card__tag" data-i18n="bento.c1Tag">Privacy</span>
+              <h3 class="bento-card__title" data-i18n="bento.c1Title">Protection without recording.</h3>
+              <p class="bento-card__desc" data-i18n="bento.c1Desc">No keylogging, screenshots, camera, microphone or face recognition. The Mac build requests none of those recording permissions.</p>
+            </div>
+          </article>
+
+          <!-- Card 2: Cmd + Esc Global Hotkey & BLE Optional -->
+          <article class="bento-card reveal">
+            <div class="bento-card__icon">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <rect x="3.5" y="7" width="21" height="14" rx="3" stroke="#FFFFFF" stroke-width="1.6"/>
+                <path d="M8 12H11M13 12H16M18 12H20M9 16H19" stroke="#DC1D2E" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="bento-card__content">
+              <span class="bento-card__tag" data-i18n="bento.c2Tag">Instant Arming</span>
+              <h3 class="bento-card__title" data-i18n="bento.c2Title">Arm in a keystroke.</h3>
+              <p class="bento-card__desc" data-i18n="bento.c2Desc">
+                Arm from any app with a single global shortcut, or enable optional Bluetooth Low Energy RSSI proximity auto-arming when you walk away.
+              </p>
+            </div>
+            <div class="bento-keys" aria-hidden="true"><kbd>⌘</kbd><kbd>esc</kbd></div>
+          </article>
+
+          <!-- Card 3: Tripwires -->
+          <article class="bento-card reveal">
+            <div class="bento-card__icon">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <path d="M14 4L23 21H5L14 4Z" stroke="#DC1D2E" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M14 11V15.5" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/>
+                <circle cx="14" cy="18.2" r="1" fill="#FFFFFF"/>
+              </svg>
+            </div>
+            <div class="bento-card__content">
+              <span class="bento-card__tag" data-i18n="bento.c3Tag">Multi-Vector</span>
+              <h3 class="bento-card__title" data-i18n="bento.c3Title">Know when someone touches your device.</h3>
+              <p class="bento-card__desc" data-i18n="bento.c3Desc">Detects activity from system idle time, USB device connections, volume mounts, lid closure and charger disconnection. It does not inspect USB contents or identify malicious devices.</p>
+            </div>
+          </article>
+
+          <!-- Card 4: Zero Cloud Exfil (Wide) -->
+          <article class="bento-card bento-card--wide reveal">
+            <div class="bento-card__icon">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <circle cx="14" cy="14" r="9.5" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.6"/>
+                <path d="M9.5 14.5L12.5 17.5L18.5 11" stroke="#DC1D2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="bento-card__content">
+              <span class="bento-card__tag" data-i18n="bento.c4Tag">Text Notifications</span>
+              <h3 class="bento-card__title" data-i18n="bento.c4Title">Alerts on your devices.</h3>
+              <p class="bento-card__desc" data-i18n="bento.c4Desc">Event type and timestamp are sent to your chosen services. WhatsApp, Telegram and iMessage use their own infrastructure; a LAN receiver is also supported.</p>
+            </div>
+          </article>
+
+          <!-- Card 5: Offline Retry Queue & Zero Local Trace -->
+          <article class="bento-card bento-card--accent reveal">
+            <div class="bento-card__icon">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                <path d="M21 14A7 7 0 1 1 18.9 8.9" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M21 5.5V9.5H17" stroke="#DC1D2E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="bento-card__content">
+              <span class="bento-card__tag" data-i18n="bento.c5Tag">Resilient Privacy</span>
+              <h3 class="bento-card__title" data-i18n="bento.c5Title">Automatic retry when you reconnect.</h3>
+              <p class="bento-card__desc" data-i18n="bento.c5Desc">The optional local WhatsApp bridge retries queued text alerts after a delivery failure. Locking happens immediately even when the network is unavailable.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="platforms" class="platforms section">
+      <div class="container install-layout">
+        <div class="section-header">
+          <h2 class="section-title" data-i18n="platforms.title">Install NyxWatch</h2>
+          <p class="section-subtitle" data-i18n="platforms.subtitle">The Mac installer below is the privacy-focused release. Other platform sources are separate prototypes.</p>
+        </div>
+        <div class="install-download">
+          <h3 data-i18n="install.files.title">Install on your Mac</h3>
+          <p data-i18n="install.files.body">Download the Mac installer, open the DMG and drag NyxWatch to Applications. For macOS 13 or later, on Apple Silicon and Intel. Source code is available on GitHub.</p>
+          <div class="install-download__actions">
+            <a href="https://github.com/qyber-llc/nyxwatch/releases/download/v1.0.2/NyxWatch.dmg" class="btn" data-i18n="install.files.download">Download for Mac (.dmg)</a>
+            <a href="https://github.com/qyber-llc/nyxwatch" data-i18n="install.files.link">View source on GitHub</a>
+          </div>
+        </div>
+        <div class="install-guides">
+          <details class="install-guide" open="open">
+            <summary>
+              <span class="install-guide__name">macOS</span>
+              <span class="install-guide__badge" data-i18n="install.mac.badge">Drag and drop</span>
+            </summary>
+            <div class="install-guide__content">
+              <ol class="install-steps">
+                <li>
+                  <h4 data-i18n="install.mac.download.title">Download and open the DMG</h4>
+                  <p data-i18n="install.mac.download.body">Click Download for Mac, then open NyxWatch.dmg from Downloads. A window with NyxWatch and the Applications folder appears.</p>
+                </li>
+                <li>
+                  <h4 data-i18n="install.mac.drag.title">Drag NyxWatch to Applications</h4>
+                  <p data-i18n="install.mac.drag.body">Drag the NyxWatch icon onto Applications in that window. Wait for the copy to finish. If you are updating, quit NyxWatch first and choose Replace when macOS asks.</p>
+                </li>
+                <li>
+                  <h4 data-i18n="install.mac.open.title">Open NyxWatch</h4>
+                  <p data-i18n="install.mac.open.body">Open Applications in Finder and double-click NyxWatch. Look for its N logo in the menu bar and on the floating button. Protection starts off.</p>
+                </li>
+                <li>
+                  <h4 data-i18n="install.mac.security.title">Apple notarization</h4>
+                  <p data-i18n="install.mac.security.body">This installer is signed with Developer ID and notarized by Apple.</p>
+                  <a href="https://support.apple.com/102445" data-i18n="install.mac.security.link">Apple’s first-launch guide</a>
+                </li>
+              </ol>
+            </div>
+          </details>
+          <details class="install-guide">
+            <summary>
+              <span class="install-guide__name">Windows</span>
+              <span class="install-guide__badge" data-i18n="install.win.badge">Run with Python</span>
+            </summary>
+            <div class="install-guide__content">
+              <ol class="install-steps">
+                <li>
+                  <h4 data-i18n="install.win.python.title">Install Python</h4>
+                  <p data-i18n="install.win.python.body">Open the official Python download page and install Python 3. When the installation is finished, close the installer.</p>
+                  <a href="https://www.python.org/downloads/windows/" data-i18n="install.win.python.link">Get Python for Windows</a>
+                </li>
+                <li>
+                  <h4 data-i18n="install.win.folder.title">Open PowerShell in the project folder</h4>
+                  <p data-i18n="install.win.folder.body">Open the extracted NyxWatch folder in File Explorer. Click the address bar, type powershell and press Enter. Then paste the line below and press Enter.</p>
+                  <div class="code-box">
+                    <code>cd cross-platform/desktop</code>
+                    <button type="button" class="copy-btn" data-copy="cd cross-platform/desktop" data-i18n="platforms.copy">Copy</button>
+                  </div>
+                </li>
+                <li>
+                  <h4 data-i18n="install.win.deps.title">Prepare NyxWatch</h4>
+                  <p data-i18n="install.win.deps.body">Copy and run each line in order. Wait for each one to finish before you paste the next. The first creates a local Python environment and the second installs the packages.</p>
+                  <div class="code-box">
+                    <code>py -3 -m venv .venv</code>
+                    <button type="button" class="copy-btn" data-copy="py -3 -m venv .venv" data-i18n="platforms.copy">Copy</button>
+                  </div>
+                  <div class="code-box">
+                    <code>.\.venv\Scripts\python.exe -m pip install -r requirements.txt</code>
+                    <button type="button" class="copy-btn" data-copy=".\.venv\Scripts\python.exe -m pip install -r requirements.txt" data-i18n="platforms.copy">Copy</button>
+                  </div>
+                </li>
+                <li>
+                  <h4 data-i18n="install.win.open.title">Start in Flag mode with protection off</h4>
+                  <p data-i18n="install.win.open.body">Run the line below. Look for Armed: False in PowerShell. To close NyxWatch, press Ctrl + C in the same window.</p>
+                  <div class="code-box">
+                    <code>.\.venv\Scripts\python.exe nyxwatch_desktop.py --mode flag</code>
+                    <button type="button" class="copy-btn" data-copy=".\.venv\Scripts\python.exe nyxwatch_desktop.py --mode flag" data-i18n="platforms.copy">Copy</button>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </details>
+          <details class="install-guide">
+            <summary>
+              <span class="install-guide__name">Linux</span>
+              <span class="install-guide__badge" data-i18n="install.linux.badge">Run with Python</span>
+            </summary>
+            <div class="install-guide__content">
+              <ol class="install-steps">
+                <li>
+                  <h4 data-i18n="install.linux.python.title">Make sure Python is ready</h4>
+                  <p data-i18n="install.linux.python.body">Open Terminal and run the first line. If Python or venv is missing on Ubuntu or Debian, run the second line and wait for it to finish.</p>
+                  <div class="code-box">
+                    <code>python3 --version</code>
+                    <button type="button" class="copy-btn" data-copy="python3 --version" data-i18n="platforms.copy">Copy</button>
+                  </div>
+                  <div class="code-box">
+                    <code>sudo apt install python3 python3-venv</code>
+                    <button type="button" class="copy-btn" data-copy="sudo apt install python3 python3-venv" data-i18n="platforms.copy">Copy</button>
+                  </div>
+                </li>
+                <li>
+                  <h4 data-i18n="install.linux.folder.title">Open Terminal in the project folder</h4>
+                  <p data-i18n="install.linux.folder.body">Open the extracted NyxWatch folder in your file manager. Right-click an empty spot and choose Open in Terminal. Then run the line below.</p>
+                  <div class="code-box">
+                    <code>cd cross-platform/desktop</code>
+                    <button type="button" class="copy-btn" data-copy="cd cross-platform/desktop" data-i18n="platforms.copy">Copy</button>
+                  </div>
+                </li>
+                <li>
+                  <h4 data-i18n="install.linux.deps.title">Prepare NyxWatch</h4>
+                  <p data-i18n="install.linux.deps.body">Copy and run each line in order. Wait for each one to finish before you paste the next.</p>
+                  <div class="code-box">
+                    <code>python3 -m venv .venv</code>
+                    <button type="button" class="copy-btn" data-copy="python3 -m venv .venv" data-i18n="platforms.copy">Copy</button>
+                  </div>
+                  <div class="code-box">
+                    <code>.venv/bin/python -m pip install -r requirements.txt</code>
+                    <button type="button" class="copy-btn" data-copy=".venv/bin/python -m pip install -r requirements.txt" data-i18n="platforms.copy">Copy</button>
+                  </div>
+                </li>
+                <li>
+                  <h4 data-i18n="install.linux.open.title">Start in Flag mode with protection off</h4>
+                  <p data-i18n="install.linux.open.body">Run the line below. Look for Armed: False. To close NyxWatch, press Ctrl + C. Input detection can be limited on Wayland.</p>
+                  <div class="code-box">
+                    <code>.venv/bin/python nyxwatch_desktop.py --mode flag</code>
+                    <button type="button" class="copy-btn" data-copy=".venv/bin/python nyxwatch_desktop.py --mode flag" data-i18n="platforms.copy">Copy</button>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </details>
+          <details class="install-guide">
+            <summary>
+              <span class="install-guide__name">Android</span>
+              <span class="install-guide__badge" data-i18n="install.android.badge">Source files only</span>
+            </summary>
+            <div class="install-guide__content">
+              <p data-i18n="install.android.body">The repository has Android source files. An APK or a complete Android Studio project is needed before you can install it.</p>
+            </div>
+          </details>
+          <details class="install-guide">
+            <summary>
+              <span class="install-guide__name">iOS</span>
+              <span class="install-guide__badge" data-i18n="install.ios.badge">Source files only</span>
+            </summary>
+            <div class="install-guide__content">
+              <p data-i18n="install.ios.body">The repository has a Swift file for iPhone. An Xcode project or an app distributed through TestFlight or the App Store is needed to install it.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 5. MINIMALIST APPLE-STYLE FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img src="assets/nyxwatch-mark.svg" width="24" height="24" alt="" />
+          <span>NyxWatch</span>
+        </div>
+        <p class="footer__tagline" data-i18n="footer.tagline">
+          On-device intrusion detection.
+        </p>
+      </div>
+
+      <a class="footer__top" href="#overview" data-i18n="footer.top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
