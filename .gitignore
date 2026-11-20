@@ -1,0 +1,6 @@
+build/
+.DS_Store
+*.log
+wa-auth/
+node_modules/
+pending_alerts.json
